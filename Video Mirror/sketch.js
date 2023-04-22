@@ -19,8 +19,11 @@ function setup() {
   serial = new p5.SerialPort();
   // get a list of all connected serial devices
   serial.list();
-  // serial port to use - you'll need to change this
-  serial.open("/dev/tty.usbmodem1101");
+  // serial port to use - you'll need to change this based on your system and port
+  // on a Mac, the port will look something like this
+  // serial.open("/dev/tty.usbmodem1101");
+  // on Windows, the port will look something like this
+  serial.open("COM3");
   // callback for when the sketchs connects to the server
   serial.on("connected", serverConnected);
   // callback to print the list of serial devices
